@@ -29,6 +29,12 @@ class Engine {
 
     public boolean makeMove(int row, int col, Player currentPlayer)
     {
+        if (board.getBoard()[row][col] == '-') {
+            if (row >= 0 && row < 3 && col >= 0 && col < 3) {
+                board.getBoard()[row][col] = currentPlayer.getSymbol();
+                return true;
+            }
+        }
         return false;
 
     }
