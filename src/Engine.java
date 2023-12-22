@@ -39,7 +39,19 @@ class Engine {
 
     }
     public boolean checkWin(Player currentPlayer){
-        return false;
+        // Check rows and columns
+        char cP = currentPlayer.getSymbol();
+
+        for(int i=0; i<3; i++){
+            if((board.getBoard()[i][0]==cP && board.getBoard()[i][1]==cP && board.getBoard()[i][2]==cP)||
+                    (board.getBoard()[0][i]==cP && board.getBoard()[1][i]==cP && board.getBoard()[2][i]==cP)){
+                return true;
+            }
+        }
+
+        //Check diagonals
+        return ((board.getBoard()[0][0]==cP && board.getBoard()[1][1]==cP && board.getBoard()[2][2]==cP)||
+                (board.getBoard()[2][0]==cP && board.getBoard()[1][1]==cP && board.getBoard()[0][2]==cP));
 
     }
 }
