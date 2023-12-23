@@ -13,9 +13,15 @@ class Player {
 
     public int[] makeMove() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your move (row and column): ");
-        int row = scanner.nextInt();
-        int col = scanner.nextInt();
+
+        int row = 0;
+        int col = 0;
+        do {
+            System.out.println("Enter your move (row and column): ");
+            row = scanner.nextInt();
+            col = scanner.nextInt();
+        }while(row>2||col>2);
+
         return new int[]{row, col};
     }
 }
