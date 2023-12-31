@@ -111,9 +111,6 @@ public class GameGui extends JFrame  {
             updateUI();
         }
 
-        public static void main(String[] args) {
-            SwingUtilities.invokeLater(() -> new GameGui());
-        }
 
 }
 
